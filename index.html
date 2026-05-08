@@ -6,12 +6,151 @@
 -->
 <html>
 	<head>
-		<title>Hyperspace by HTML5 UP</title>
+		<title>Guillaume Autier - Diétetique Plénitude</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
+		 <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Dancing+Script:wght@500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+ <style>
+    /* ─── RESET ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ─── SECTION WRAPPER ───────────────────────────── */
+    .parcours-section {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 2.5rem;
+      background: #faf8f5;
+    }
+
+    /* ─── CITATION HIPPOCRATE ───────────────────────── */
+    .citation-wrap {
+      position: relative;
+      padding: 1.8rem 2rem 1.8rem 3rem;
+      border-left: 2px solid #a4c8b0;
+      margin-bottom: 2.8rem;
+    }
+
+    .citation-guillemet {
+      position: absolute;
+      top: -14px;
+      left: 16px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 90px;
+      color: #82bc96;
+      opacity: .15;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .citation-texte {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1.25rem, 3vw, 1.6rem);
+      font-weight: 500;
+      color: #9ac4a9;
+      line-height: 1.6;
+      letter-spacing: .01em;
+      margin-bottom: .75rem;
+
+      /* Effet machine à écrire */
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0;
+      animation: ecriture 2.8s steps(60, end) .3s forwards;
+    }
+
+    @keyframes ecriture {
+      from { width: 0; opacity: 0; }
+      3%   { opacity: 1; }
+      to   { width: 100%; }
+    }
+
+    .citation-auteur {
+      font-family: 'Jost', sans-serif;
+      font-size: .75rem;
+      font-weight: 400;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #c6ffd7;
+      opacity: 0;
+      animation: fadeup .6s ease .5s forwards;
+    }
+
+    /* ─── SÉPARATEUR ────────────────────────────────── */
+    .separateur {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 2rem 0 2.2rem;
+      opacity: 0;
+      animation: fadeup .6s ease 3.2s forwards;
+    }
+
+    .separateur::before,
+    .separateur::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #b5d4bb, transparent);
+    }
+
+    .separateur-icon {
+      font-size: 13px;
+      color: #2D5A3D;
+      opacity: .45;
+    }
+
+    /* ─── PARAGRAPHES ───────────────────────────────── */
+    .parcours-body p {
+      font-size: clamp(1rem, 2.2vw, 1.15rem);
+      line-height: 1.95;
+      color: #ffffff;
+      margin-bottom: 1.1rem;
+      opacity: 0;
+    }
+
+    .parcours-body p em {
+      font-style: italic;
+      color: #d2f2dd;
+    }
+
+    .parcours-body p:nth-child(1) { animation: fadeup .7s ease 3.4s forwards; }
+    .parcours-body p:nth-child(2) { animation: fadeup .7s ease 3.75s forwards; }
+    .parcours-body p:nth-child(3) { animation: fadeup .7s ease 4.1s forwards; }
+    .parcours-body p:nth-child(4) { animation: fadeup .7s ease 4.45s forwards; }
+    .parcours-body p:nth-child(5) { animation: fadeup .7s ease 4.8s forwards; }
+
+    /* ─── CONCLUSION MANUSCRITE ─────────────────────── */
+    .conclusion {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1.2rem, 2.8vw, 1.4rem);
+      font-weight: 500;
+      color: #b9efcc;
+      text-align: center;
+      line-height: 1.75;
+      margin-top: 2rem;
+      opacity: 0;
+      animation: fadeup .9s ease 5.2s forwards;
+    }
+
+    /* ─── ANIMATION COMMUNE ─────────────────────────── */
+    @keyframes fadeup {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── RESPONSIVE ────────────────────────────────── */
+    @media (max-width: 480px) {
+      .parcours-section { padding: 2.5rem 1.25rem; }
+      .citation-texte   { white-space: normal; width: auto; animation: fadein 1s ease .3s both; }
+      @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+    }
+  </style>
+</head>
 	<body class="is-preload">
 
 		<!-- Sidebar -->
@@ -19,10 +158,10 @@
 				<div class="inner">
 					<nav>
 						<ul>
-							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#one">Who we are</a></li>
-							<li><a href="#two">What we do</a></li>
-							<li><a href="#three">Get in touch</a></li>
+							<li><a href="#intro">Bienvenue</a></li>
+							<li><a href="#one">Prendre rendez-vous</a></li>
+							<li><a href="#two">Mon parcours</a></li>
+							<li><a href="#three">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -34,11 +173,12 @@
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<h1>Hyperspace</h1>
-							<p>Just another fine responsive site template designed by <a href="http://html5up.net">HTML5 UP</a><br />
-							and released for free under the <a href="http://html5up.net/license">Creative Commons</a>.</p>
+							<h1>Retrouve l'équilibre. Comprends ton corps. Transforme ton quotidien.</h1>
+							<h2>Guillaume Autier — Diététicien Nutritionniste & Naturopathe</h2>
+							<p>Téléconsultation partout en France</p>
+							<p>Tu te sens ballonné, fatigué ou bloqué dans tes objectifs ?</p> <p>Je t'accompagne vers une alimentation durable, adaptée à ta vie — sans régime, sans culpabilité, avec des résultats concrets.</p>
 							<ul class="actions">
-								<li><a href="#one" class="button scrolly">Learn more</a></li>
+								<li><a href="#one" class="button scrolly">En savoir plus</a></li>
 							</ul>
 						</div>
 					</section>
@@ -49,11 +189,11 @@
 							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
 							<div class="content">
 								<div class="inner">
-									<h2>Sed ipsum dolor</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
+									<h2>Prendre rendez-vous</h2>
+									<p>Je vais te dire quelque chose qu'on entend rarement chez un professionnel de santé :
+Tu n'as pas besoin d'un régime. Tu as besoin qu'on t'écoute vraiment. </p>
+<p>Je m'appelle Guillaume. Je suis diététicien nutritionniste et naturopathe — et depuis que j'exerce, j'ai appris une chose essentielle : ce n'est jamais juste une question d'alimentation. C'est une question de toi. De comment tu vis, de comment tu te sens, de ce que ton corps essaie de te dire depuis trop longtemps.
+Mon travail ? Traduire ces signaux. Et t'aider à agir — sans pression, sans culpabilité, avec des résultats qui durent.</p>
 								</div>
 							</div>
 						</section>
@@ -61,10 +201,14 @@
 							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
 							<div class="content">
 								<div class="inner">
-									<h2>Feugiat consequat</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
+									<h2>Bilan Microbiote et santé digestive</h2>
+									<p>Tu sens que quelque chose ne va pas dans ta digestion — mais tu ne sais pas exactement quoi, ni pourquoi.
+Ce bilan, c'est le point de départ. Une heure pour faire le tour de ton fonctionnement digestif, explorer ton microbiote, analyser tes habitudes de vie. Sans jugement. Avec méthode.
+Tu repars avec une vision claire de ce qui se passe dans ton corps — et des premières pistes concrètes pour agir.
+Durée : 1h · Tarif : 90 €
+Téléconsultation ou présentiel en Île-de-France</p>
 									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
+										<li><a href="#" class="button">Je réserve mon bilan</a></li>
 									</ul>
 								</div>
 							</div>
@@ -73,10 +217,16 @@
 							<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
 							<div class="content">
 								<div class="inner">
-									<h2>Ultricies aliquam</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
+									<h2>Séance ciblée</h2>
+							<p>Pas besoin d'un suivi complet pour avancer. Parfois, il suffit d'une heure avec le bon regard.
+Les séances ciblées sont faites pour toi si tu as un point précis à travailler — des ballonnements qui reviennent, une fatigue digestive qui s'installe, une performance sportive qui plafonne, ou simplement l'envie de comprendre un signal que ton corps t'envoie depuis trop longtemps.
+Une séance. Un problème. Des réponses concrètes.
+Avant de réserver, tu remplis un court formulaire — pour que j'arrive à notre échange avec déjà les bonnes questions, et toi avec les premiers éléments de réponse.
+
+Durée : 45 min · Tarif : 75 €
+Téléconsultation ou présentiel en Île-de-France</p>
 									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
+										<li><a href="#" class="button">Je réserve ma séance ciblée</a></li>
 									</ul>
 								</div>
 							</div>
@@ -86,57 +236,48 @@
 				<!-- Two -->
 					<section id="two" class="wrapper style3 fade-up">
 						<div class="inner">
-							<h2>What we do</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-code"></span>
-									<h3>Lorem ipsum amet</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-lock"></span>
-									<h3>Aliquam sed nullam</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-cog"></span>
-									<h3>Sed erat ullam corper</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-desktop"></span>
-									<h3>Veroeros quis lorem</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-link"></span>
-									<h3>Urna quis bibendum</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon major fa-gem"></span>
-									<h3>Aliquam urna dapibus</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-							</div>
-							<ul class="actions">
-								<li><a href="generic.html" class="button">Learn more</a></li>
-							</ul>
-						</div>
+							<h2>Mon Parcours</h2>
+							 <div class="citation-wrap">
+      <span class="citation-guillemet">"</span>
+      <p class="citation-texte">Que ton alimentation soit ta première médecine.</p>
+      <p class="citation-auteur">Hippocrate &nbsp;·&nbsp; il y a 2 400 ans. Rien n'a changé.</p>
+    </div>
+
+    <!-- Séparateur -->
+    <div class="separateur">
+      <span class="separateur-icon">✦</span>
+    </div>
+
+    <!-- Paragraphes du parcours -->
+    <div class="parcours-body">
+      <p>Quand j'ai découvert cette phrase, j'ai su que c'était exactement pour ça que je voulais exercer ce métier.</p>
+      <p>Pas pour prescrire des listes. Pas pour peser des grammes de riz. Mais pour aider les gens à renouer avec quelque chose d'essentiel&nbsp;: <em>comprendre ce que leur corps leur dit</em>, et lui répondre avec justesse.</p>
+      <p>Depuis que je suis diplômé, j'ai eu la confirmation, consultation après consultation, que la nutrition n'est jamais une affaire de chiffres. C'est une affaire d'humain.</p>
+      <p>Alors j'ai approfondi ma formation avec la naturopathie — pour aller encore plus loin dans cette vision globale du corps, de l'énergie, de l'équilibre.</p>
+      <p>Aujourd'hui, ce que je propose n'est pas un régime. Ce n'est pas un protocole standard.</p>
+    </div>
+
+    <!-- Conclusion -->
+    <p class="conclusion">
+      C'est un chemin. Le tien.<br>
+      Construit avec toi, pour toi, à ton rythme.
+    </p>
+
+												</div>
 					</section>
 
 				<!-- Three -->
 					<section id="three" class="wrapper style1 fade-up">
 						<div class="inner">
-							<h2>Get in touch</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+							<h2>Contact</h2>
+							<p>Une question avant de te lancer ? Envie d'échanger quelques mots d'abord ?
+Je suis là. Choisis la façon qui te ressemble le mieux.</p>
 							<div class="split style1">
 								<section>
 									<form method="post" action="#">
 										<div class="fields">
 											<div class="field half">
-												<label for="name">Name</label>
+												<label for="name">Nom Prénom</label>
 												<input type="text" name="name" id="name" />
 											</div>
 											<div class="field half">
@@ -149,35 +290,30 @@
 											</div>
 										</div>
 										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
+											<li><a href="" class="button submit">Envoyer</a></li>
 										</ul>
 									</form>
 								</section>
 								<section>
 									<ul class="contact">
+			
 										<li>
-											<h3>Address</h3>
-											<span>12345 Somewhere Road #654<br />
-											Nashville, TN 00000-0000<br />
-											USA</span>
+											<h3>E-mail</h3>
+											<a href="#">contact.dietetiqueplenitude@gmail.com </a>
 										</li>
 										<li>
-											<h3>Email</h3>
-											<a href="#">user@untitled.tld</a>
-										</li>
-										<li>
-											<h3>Phone</h3>
+											<h3>Téléphone</h3>
 											<span>(000) 000-0000</span>
 										</li>
 										<li>
-											<h3>Social</h3>
+											<h3>Actu</h3>
 											<ul class="icons">
-												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+												<li><p>Suis l'aventure Diététique Plénitude
+Des conseils, des vérités qu'on n'entend pas souvent, et une vision de la nutrition qui fait du bien.</p></li>
 												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
 												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul>
+												</ul>
 										</li>
 									</ul>
 								</section>

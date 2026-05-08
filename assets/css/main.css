@@ -1833,9 +1833,10 @@ input, select, textarea {
 		transition: border-color 0.2s ease;
 		background-color: transparent;
 		border: solid 1px !important;
-		border-color: rgba(255, 255, 255, 0.15) !important;
+		border-color: #291107 !important;
+		background-color: rgb(104, 27, 14);
 		border-radius: 3em;
-		color: #ffffff !important;
+		color: #ffffff!important;
 		cursor: pointer;
 		display: inline-block;
 		font-size: 0.6em;
@@ -3022,7 +3023,7 @@ input, select, textarea {
 				-webkit-transition: opacity 1s ease;
 				-ms-transition: opacity 1s ease;
 				transition: opacity 1s ease;
-				background: rgba(49, 36, 80, 0.9);
+				background: rgba(8, 65, 71, 0.9);
 				content: '';
 				display: block;
 				height: 100%;
